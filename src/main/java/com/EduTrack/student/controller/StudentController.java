@@ -73,5 +73,14 @@ public class StudentController {
         }
     }
 
+    @GetMapping("/name/{name}")
+    public ResponseEntity<List<StudentDto>> getStudentByName(@PathVariable String name){
+        return ResponseEntity.ok(studentService.findByName(name));
+    }
+
+    @GetMapping("/course/{course}")
+    public ResponseEntity<List<StudentDto>> getStudentByCourse (@PathVariable String course){
+        return ResponseEntity.ok(studentService.findByCourse(course));
+    }
 
 }

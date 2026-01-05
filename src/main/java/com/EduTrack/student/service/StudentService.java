@@ -16,4 +16,6 @@ public interface StudentService {
     void deleteStudent(Long id) throws StudentNotFoundException;
     StudentDto partialUpdate(Long id,  Map<String, Object> updates) throws StudentNotFoundException;
     StudentDto fullUpdate(Long id, AddStudentDto updates) throws StudentNotFoundException;
+    List<StudentDto>findByName(String name);
+    List<StudentDto> findByCourse(String course);
 }
